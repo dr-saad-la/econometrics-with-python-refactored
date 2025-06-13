@@ -24,7 +24,7 @@
 6. [Seaborn Documentation](https://seaborn.pydata.org/)
 7. [Pandas Documentation](https://pandas-datareader.readthedocs.io/en/latest/)
 8. [Pandas-reader Documentation](https://pandas-datareader.readthedocs.io/en/latest/)
-9. 
+9. [Stargazer Result Formatting tool](https://github.com/StatsReporting/stargazer)
 
 ## Python General Programming
 
