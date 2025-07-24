@@ -71,9 +71,11 @@ class StudentTError:
         self, size: int, random_state: Optional[np.random.Generator] = None
     ) -> NDArray[np.floating]:
         rng = random_state or np.random.default_rng()
-        return np.asarray(stats.t.rvs(
-            self.df, loc=self.loc, scale=self.scale, size=size, random_state=rng
-        ))
+        return np.asarray(
+            stats.t.rvs(
+                self.df, loc=self.loc, scale=self.scale, size=size, random_state=rng
+            )
+        )
 
 
 @dataclass
@@ -369,20 +371,22 @@ def create_data_generator(
             raise ValueError(f"Unsupported generator_type: {generator_type}")
 
 
-if __name__ == "__main__":
-    # Example usage
-    config = DataConfig(n_obs=200, n_vars=2, coefficients=[2.5, -1.2])
-
-    # Linear data
-    linear_gen = create_data_generator("linear", config)
-    linear_data = linear_gen.generate()
-    print("Linear data sample:")
-    print(linear_data.head())
-
-    # Non-linear data
-    nonlinear_gen = create_data_generator(
-        "nonlinear", config, relationship_type="quadratic"
-    )
-    nonlinear_data = nonlinear_gen.generate()
-    print("\nNon-linear data sample:")
-    print(nonlinear_data.head())
+# TODO:
+#  PUT THE NEXT CODE IN A TEST MODULE
+# if __name__ == "__main__":
+#     # Example usage
+#     config = DataConfig(n_obs=200, n_vars=2, coefficients=[2.5, -1.2])
+#
+#     # Linear data
+#     linear_gen = create_data_generator("linear", config)
+#     linear_data = linear_gen.generate()
+#     print("Linear data sample:")
+#     print(linear_data.head())
+#
+#     # Non-linear data
+#     nonlinear_gen = create_data_generator(
+#         "nonlinear", config, relationship_type="quadratic"
+#     )
+#     nonlinear_data = nonlinear_gen.generate()
+#     print("\nNon-linear data sample:")
+#     print(nonlinear_data.head())
